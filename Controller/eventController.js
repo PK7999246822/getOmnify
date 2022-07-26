@@ -7,15 +7,15 @@ const Eventhandler = async (req, res) => {
     let start = moment();
     let end = moment().add(60, 'd');
 
-    var scheduledEvent = [];
+    let Event = [];
 
     let temp = start.clone().day(req.body.weekDay);
     if (temp.isAfter(start, 'd')) {
-        scheduledEvent.push(temp.format('YYYY-MM-DD'));
+        Event.push(temp.format('YYYY-MM-DD'));
     }
     while (temp.isBefore(end)) {
         temp.add(7, 'days');
-        scheduledEvent.push(temp.format('YYYY-MM-DD'));
+        Event.push(temp.format('YYYY-MM-DD'));
     }
 
 
