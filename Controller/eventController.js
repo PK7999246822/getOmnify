@@ -46,7 +46,7 @@ let findSchedule = async (req, res) => {
     try {
 
         const schedulesResponce = await scheduleModel.find({
-            email: req.decodedToken
+            email: req.DecodedToken
         });
 
         if (!schedulesResponce) {
